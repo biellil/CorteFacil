@@ -1,15 +1,35 @@
-import { getAuth, onAuthStateChanged } from 'firebase/auth'
-import { createContext, useContext, useEffect, useState } from 'react'
+import { Auth, getAuth, onAuthStateChanged } from 'firebase/auth'
+import React, {
+  ReactNode,
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+} from 'react'
 import { FirebaseSDK } from '../../utils/Firebase/index'
 
-const AuthContext = createContext()
+interface AuthContextType {
+  currentUser: null | object
+}
 
-export const useAuth = () => useContext(AuthContext)
+const AuthContext = createContext<AuthContextType | undefined>(undefined)
 
-export const AuthProvider = ({ children }) => {
-  const [currentUser, setCurrentUser] = useState(null)
+export const useAuth = () => {
+  const context = useContext(AuthContext)
+  if (context === undefined) {
+    throw new Error('useAuth must be used within an AuthProvider')
+  }
+  return context
+}
+
+interface AuthProviderProps {
+  children: ReactNode
+}
+
+export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
+  const [currentUser, setCurrentUser] = useState<object | null>(null)
   const [loading, setLoading] = useState(true)
-  const auth = getAuth(FirebaseSDK)
+  const auth: Auth = getAuth(FirebaseSDK)
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
