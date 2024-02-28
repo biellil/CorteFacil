@@ -1,22 +1,21 @@
 {
-    "rewrites": [
-      { "source": "/login", "destination": "/login/index.html" },
-      { "source": "/login/(.*)", "destination": "/login/index.html" }
-    ],
-    "headers": [
+    "version": 2,
+    "routes": [
       {
-        "source": "/login/(.*)",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "no-cache"
-          }
-        ]
+        "src": "^/login(?:/.*)?$",
+        "dest": "/login/index.html",
+        "continue": true
+      },
+      {
+        "src": "/(.*)",
+        "headers": {
+          "cache-control": "s-maxage=1, stale-while-revalidate"
+        },
+        "dest": "/login/index.html"
       }
     ],
-    "static": {
-      "public": "dist"
-    },
-    "cleanUrls": true
+    "rewrites": [
+      { "source": "/login/(.*)", "destination": "/login/index.html" }
+    ]
   }
   
