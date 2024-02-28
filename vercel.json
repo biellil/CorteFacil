@@ -1,0 +1,22 @@
+{
+    "rewrites": [
+      { "source": "/login", "destination": "/login/index.html" },
+      { "source": "/login/(.*)", "destination": "/login/index.html" }
+    ],
+    "headers": [
+      {
+        "source": "/login/(.*)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "no-cache"
+          }
+        ]
+      }
+    ],
+    "static": {
+      "public": "dist"
+    },
+    "cleanUrls": true
+  }
+  
