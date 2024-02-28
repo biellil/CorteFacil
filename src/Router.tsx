@@ -1,11 +1,11 @@
 import { Route, Routes } from 'react-router-dom'
-import { Login } from './pages/login/inde'
+import { Dsa } from './pages/inde'
 
 export function Routers() {
   return (
     <Routes>
       <Route path="/login">
-        <Route index element={<Login />} />
+        <Route index element={<Dsa />} />
       </Route>
     </Routes>
   )
