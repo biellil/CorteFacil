@@ -1,14 +1,15 @@
 import { BrowserRouter } from 'react-router-dom'
 import { Routers } from './Router'
-import { GlobalStyle } from './styles/global'
+import { AuthProvider } from './components/Context'
 
 export function App() {
   return (
     <>
-      <GlobalStyle />
-      <BrowserRouter>
-        <Routers />
-      </BrowserRouter>
+      <AuthProvider>
+        <BrowserRouter>
+          <Routers />
+        </BrowserRouter>
+      </AuthProvider>
     </>
   )
 }
