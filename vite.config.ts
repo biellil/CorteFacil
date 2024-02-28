@@ -4,7 +4,7 @@ import { defineConfig } from 'vite'
 export default defineConfig({
   base: '/login',
   plugins: [react()],
-  preview: {
+  /* preview: {
     port: 80,
     strictPort: true,
   },
@@ -13,5 +13,5 @@ export default defineConfig({
     strictPort: true,
     host: true,
     origin: 'http://0.0.0.0:80',
-  },
+  }, */
 })
