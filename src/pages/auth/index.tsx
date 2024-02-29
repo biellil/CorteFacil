@@ -1,6 +1,7 @@
+import Facebook from '../../assets/Facebook-logo.png'
+import Google from '../../assets/google-logo.png'
 import hero from '../../assets/heroBarbershp.png'
 import { MainHero, SectionHero, Sectionform } from './styles'
-
 export function Auth() {
   return (
     <MainHero>
@@ -8,29 +9,44 @@ export function Auth() {
         <img src={hero} alt="Hero" />
       </SectionHero>
       <Sectionform>
+        <div>
+          <h1>Login</h1>
+          <p>Entre com email e senha.</p>
+        </div>
         <form>
-          <label htmlFor="email">Email</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="exemplo@gmail.com"
-          />
-
-          <label htmlFor="password">Senha</label>
-          <input type="password" id="password" name="password" />
-
-          <button type="submit">Entrar</button>
-
           <div>
-            <button type="button">Facebook</button>
-            <button type="button">Google</button>
+            <label htmlFor="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="exemplo@gmail.com"
+            />
           </div>
 
-          <a href="#">Esqueceu a senha?</a>
-          <a href="#" className="sign-up">
-            Não possui conta? Cadastre-se
-          </a>
+          <div>
+            <label htmlFor="password">Senha</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="**********"
+            />
+            <a href="#">Esqueceu a senha?</a>
+          </div>
+
+          <button type="submit">Entrar</button>
+          <p>OU</p>
+          <div>
+            <button type="button">
+              <img src={Facebook} alt="" />
+            </button>
+            <button type="button">
+              <img src={Google} alt="" />
+            </button>
+          </div>
+
+          <a href="#">Não possui conta? Cadastre-se</a>
         </form>
       </Sectionform>
     </MainHero>
