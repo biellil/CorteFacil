@@ -67,9 +67,5 @@ export const GlobalStyle = createGlobalStyle`
     }
   }
 
-  @media (max-width: 375px) {
-    html {
-      font-size: 40%;
-    }
-  }
+  
 `

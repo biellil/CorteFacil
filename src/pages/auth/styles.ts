@@ -6,6 +6,10 @@ export const MainHero = styled.main`
   background-color: #8085a5;
   justify-content: space-between;
   align-items: center;
+
+  @media (max-width: 425px) {
+    flex-direction: column;
+  }
 `
 
 export const SectionHero = styled.section`
