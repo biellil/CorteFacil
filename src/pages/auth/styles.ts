@@ -18,8 +18,9 @@ export const SectionHero = styled.section`
   width: 25rem;
   align-items: center;
   justify-content: center;
+
   img {
-    padding: 1rem;
+    padding: 0.5rem;
 
     width: 45rem;
     height: 30rem;
@@ -27,13 +28,16 @@ export const SectionHero = styled.section`
 `
 export const Sectionform = styled.section`
   height: 100vh;
-  width: 35rem;
+  width: 70vh;
   background-color: #eceff1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 
+  @media (max-width: 768px) {
+    width: 51vh;
+  }
   > div {
     gap: 1rem;
     display: flex;
@@ -160,6 +164,5 @@ export const Logodiv = styled.div`
   }
   img {
     padding: 1px;
-
   }
 `
