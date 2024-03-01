@@ -1,7 +1,14 @@
 import Facebook from '../../assets/Facebook-logo.png'
 import Google from '../../assets/google-logo.png'
 import hero from '../../assets/heroBarbershp.png'
-import { MainHero, SectionHero, Sectionform } from './styles'
+import {
+  DivLabelInput,
+  Form,
+  Logodiv,
+  MainHero,
+  SectionHero,
+  Sectionform,
+} from './styles'
 export function Auth() {
   return (
     <MainHero>
@@ -13,8 +20,8 @@ export function Auth() {
           <h1>Login</h1>
           <p>Entre com email e senha.</p>
         </div>
-        <form>
-          <div>
+        <Form>
+          <DivLabelInput>
             <label htmlFor="email">Email</label>
             <input
               type="email"
@@ -22,9 +29,9 @@ export function Auth() {
               name="email"
               placeholder="exemplo@gmail.com"
             />
-          </div>
+          </DivLabelInput>
 
-          <div>
+          <DivLabelInput>
             <label htmlFor="password">Senha</label>
             <input
               type="password"
@@ -33,21 +40,21 @@ export function Auth() {
               placeholder="**********"
             />
             <a href="#">Esqueceu a senha?</a>
-          </div>
+          </DivLabelInput>
 
           <button type="submit">Entrar</button>
           <p>OU</p>
-          <div>
+          <Logodiv>
             <button type="button">
               <img src={Facebook} alt="" />
             </button>
             <button type="button">
               <img src={Google} alt="" />
             </button>
-          </div>
+          </Logodiv>
 
           <a href="#">Não possui conta? Cadastre-se</a>
-        </form>
+        </Form>
       </Sectionform>
     </MainHero>
   )
