@@ -72,8 +72,8 @@ export const Sectionform = styled.section`
       input {
         border-radius: 16px;
         padding: 1rem;
-        height: 2rem;
-        width: 20rem;
+        height: 2.5rem;
+        width: 21rem;
         box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.2);
       }
 
