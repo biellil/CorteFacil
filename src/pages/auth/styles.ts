@@ -48,7 +48,7 @@ export const Sectionform = styled.section`
 
     h1 {
       font-size: 2.5rem;
-      font-weight: 400;
+      font-weight: 500;
       font-style: normal;
     }
     p {
@@ -83,18 +83,9 @@ export const Form = styled.form`
     font-weight: 400;
     font-style: normal;
     background-color: var(--primary);
-
     cursor: pointer;
-    > div {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-evenly;
-      gap: 0.4rem;
-
-      a {
-        color: #000;
-        margin-left: 11.5rem;
-      }
+    &:hover {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.644);
     }
   }
 `
@@ -116,12 +107,19 @@ export const DivLabelInput = styled.div`
     width: 20rem;
     box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.2);
 
+    &:focus {
+      border: 2px solid var(--primary);
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.644);
+    }
     font-size: 1.2rem;
   }
 
   a {
     color: #000;
     margin-left: 11.5rem;
+    &:hover {
+      text-shadow: 0 4px 5px;
+    }
   }
 `
 
@@ -139,15 +137,21 @@ export const Logodiv = styled.div`
     justify-content: space-evenly;
     gap: 1rem;
 
-    button {
-      border: 2px solid rgba(25, 142, 182, 1);
+    > button {
+      border: 2px solid var(--primary);
       border-radius: 16px;
+      &:hover {
+        box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.2);
+      }
     }
     img {
       padding: 1px;
     }
   }
   a {
-    color: #198eb6;
+    color: var(--primary);
+    &:hover {
+      text-shadow: 0 4px 5px;
+    }
   }
 `
