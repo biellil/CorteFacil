@@ -3,10 +3,13 @@ import styled from 'styled-components'
 export const MainHero = styled.main`
   display: flex;
   height: 100vh;
-  background-color: #8085a5;
+  background-color: #ffffff;
   justify-content: space-between;
   align-items: center;
 
+  button {
+    cursor: pointer;
+  }
   @media (max-width: 425px) {
     flex-direction: column;
   }
@@ -22,14 +25,14 @@ export const SectionHero = styled.section`
   img {
     padding: 0.5rem;
 
-    width: 45rem;
-    height: 30rem;
+    width: 40rem;
+    height: 25rem;
   }
 `
 export const Sectionform = styled.section`
   height: 100vh;
   width: 70vh;
-  background-color: #eceff1;
+  background-color: var(--secondary);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -56,7 +59,7 @@ export const Sectionform = styled.section`
   }
 `
 export const Form = styled.form`
-  padding: 3rem 0;
+  padding: 2rem 0;
   margin-left: -1rem;
   gap: 1rem;
   display: flex;
@@ -68,54 +71,10 @@ export const Form = styled.form`
 
   > button {
     display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: start;
-    > div {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-evenly;
-      gap: 0.4rem;
-      label {
-        font-size: 1.3rem;
-        font-weight: 400;
-        font-style: normal;
-      }
-      input {
-        border-radius: 16px;
-        padding: 1rem;
-        height: 2.5rem;
-        width: 21rem;
-        box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.2);
-      }
-
-      a {
-        color: #000;
-        margin-left: 11.5rem;
-      }
-    }
-
-    > button {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 16px;
-      background-color: #2c3da8;
-      box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.2);
-      height: 2rem;
-      width: 20rem;
-      color: white;
-      font-size: 1rem;
-      font-weight: 400;
-      font-style: normal;
-    }
-    button {
-      cursor: pointer;
-    }
     align-items: center;
     justify-content: center;
     border-radius: 16px;
-    background-color: #2c3da8;
+
     box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.2);
     height: 2rem;
     width: 20rem;
@@ -123,9 +82,20 @@ export const Form = styled.form`
     font-size: 1rem;
     font-weight: 400;
     font-style: normal;
-  }
-  button {
+    background-color: var(--primary);
+
     cursor: pointer;
+    > div {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      gap: 0.4rem;
+
+      a {
+        color: #000;
+        margin-left: 11.5rem;
+      }
+    }
   }
 `
 
@@ -142,9 +112,11 @@ export const DivLabelInput = styled.div`
   input {
     border-radius: 16px;
     padding: 1rem;
-    height: 2rem;
+    height: 2.8rem;
     width: 20rem;
     box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.2);
+
+    font-size: 1.2rem;
   }
 
   a {
@@ -154,15 +126,28 @@ export const DivLabelInput = styled.div`
 `
 
 export const Logodiv = styled.div`
+  padding: 0 3rem;
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: column;
+
   align-items: center;
   gap: 2rem;
-  button {
-    border: 2px solid rgba(25, 142, 182, 1);
-    border-radius: 16px;
+
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 1rem;
+
+    button {
+      border: 2px solid rgba(25, 142, 182, 1);
+      border-radius: 16px;
+    }
+    img {
+      padding: 1px;
+    }
   }
-  img {
-    padding: 1px;
+  a {
+    color: #198eb6;
   }
 `

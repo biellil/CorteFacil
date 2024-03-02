@@ -1,6 +1,6 @@
 import Facebook from '../../assets/Facebook-logo.png'
 import Google from '../../assets/google-logo.png'
-import hero from '../../assets/heroBarbershp.png'
+import logo from '../../assets/heroBarbershp.png'
 import {
   DivLabelInput,
   Form,
@@ -13,7 +13,7 @@ export function Auth() {
   return (
     <MainHero>
       <SectionHero>
-        <img src={hero} alt="Hero" />
+        <img src={logo} alt="Hero" />
       </SectionHero>
       <Sectionform>
         <div>
@@ -43,17 +43,19 @@ export function Auth() {
           </DivLabelInput>
 
           <button type="submit">Entrar</button>
-          <p>OU</p>
-          <Logodiv>
-            <button type="button">
-              <img src={Facebook} alt="" />
-            </button>
-            <button type="button">
-              <img src={Google} alt="" />
-            </button>
-          </Logodiv>
 
-          <a href="#">Não possui conta? Cadastre-se</a>
+          <Logodiv>
+            <p>OU</p>
+            <div>
+              <button type="button">
+                <img src={Facebook} alt="" />
+              </button>
+              <button type="button">
+                <img src={Google} alt="" />
+              </button>
+            </div>
+            <a href="#">Não possui conta? Cadastre-se</a>
+          </Logodiv>
         </Form>
       </Sectionform>
     </MainHero>
