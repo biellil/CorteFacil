@@ -76,10 +76,10 @@ export const Form = styled.form`
     border-radius: 16px;
 
     box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.2);
-    height: 2rem;
+    height: 2.5rem;
     width: 20rem;
     color: white;
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 400;
     font-style: normal;
     background-color: var(--primary);
