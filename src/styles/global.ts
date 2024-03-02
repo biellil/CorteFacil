@@ -1,8 +1,11 @@
 import { createGlobalStyle } from 'styled-components'
-
 export const GlobalStyle = createGlobalStyle`
+:root{
 
-@import url('https://fonts.googleapis.com/css2?family=Averia+Sans+Libre:wght@400;700&display=swap');
+  --primary: #d69533;
+  --secondary: #eceff1;
+ 
+}
 
   * {
     margin: 0;
@@ -10,45 +13,9 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     outline: none;
     border: none;
-    font-family: 'Averia Sans Libre';
+    font-family: "Averia Sans Libre", sans-serif;
     text-decoration: none;
-
-
-    @font-face {
-    font-family: "Averia Sans Libre";
-    font-weight: 300;
-    font-style: normal;
-  }
-
- 
-
-  @font-face {
-    font-family: "Averia Sans Libre";
-    font-weight: 400;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: "Averia Sans Libre";
-    font-weight: 400;
-    font-style: italic;
-  }
-
-  @font-face {
-    font-family: "Averia Sans Libre";
-    font-weight: 700;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: "Averia Sans Libre";
-    font-weight: 700;
-    font-style: italic;
-  }
-
-
-
-  }
+   
   
   html {
     font-size: 100%;
@@ -67,5 +34,5 @@ export const GlobalStyle = createGlobalStyle`
     }
   }
 
-  
+}
 `
