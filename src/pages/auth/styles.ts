@@ -18,7 +18,7 @@ export const MainHero = styled.main`
 export const SectionHero = styled.section`
   display: flex;
   flex: 1;
-  width: 25rem;
+  width: 20rem;
   align-items: center;
   justify-content: center;
 
@@ -31,7 +31,7 @@ export const SectionHero = styled.section`
 `
 export const Sectionform = styled.section`
   height: 100vh;
-  width: 70vh;
+  width: 80vh;
   background-color: var(--secondary);
   display: flex;
   flex-direction: column;
