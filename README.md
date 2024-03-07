@@ -9,7 +9,7 @@ Para executar a aplicação localmente, siga os passos abaixo:
 ```bash
  git clone https://github.com/biellil/CorteFacil.git
 ```
-2.entre na pasta
+ 2.entre na pasta:
 ```bash
   cd CorteFacil
 
