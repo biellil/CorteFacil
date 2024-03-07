@@ -182,6 +182,7 @@ export const Logodiv = styled.div`
       }
     }
     img {
+      width: 42px;
       padding: 1px;
     }
   }
