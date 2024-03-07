@@ -30,7 +30,7 @@ export const GlobalStyle = createGlobalStyle`
 
   @media (max-width: 600px) {
     html {
-      font-size: 60%;
+      font-size: 65%;
     }
   }
 

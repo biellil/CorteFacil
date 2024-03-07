@@ -25,8 +25,27 @@ export const SectionHero = styled.section`
   img {
     padding: 0.5rem;
 
-    width: 40rem;
-    height: 25rem;
+    width: 39rem;
+    height: 24rem;
+  }
+
+  @media (max-width: 768px) {
+    width: 18rem;
+    img {
+      padding: 1rem;
+      width: 30rem;
+      height: 20rem;
+    }
+  }
+  @media (max-width: 425px) {
+    margin: 3rem;
+    height: 80vh;
+    width: 18rem;
+    img {
+      padding: 0rem;
+      width: 20rem;
+      height: 15rem;
+    }
   }
 `
 export const Sectionform = styled.section`
@@ -38,9 +57,6 @@ export const Sectionform = styled.section`
   align-items: center;
   justify-content: center;
 
-  @media (max-width: 768px) {
-    width: 51vh;
-  }
   > div {
     gap: 1rem;
     display: flex;
@@ -55,6 +71,27 @@ export const Sectionform = styled.section`
       font-size: 1rem;
       font-weight: 300;
       font-style: normal;
+    }
+  }
+  @media (max-width: 768px) {
+    width: 70vh;
+  }
+  @media (max-width: 425px) {
+    height: 100vh;
+    width: 64vh;
+
+    > div {
+      align-items: center;
+
+      h1 {
+        margin-top: 2.5rem;
+        font-size: 3rem;
+      }
+      p {
+        font-size: 1.4rem;
+        font-weight: 350;
+        font-style: normal;
+      }
     }
   }
 `
