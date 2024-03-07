@@ -9,18 +9,19 @@ Para executar a aplicação localmente, siga os passos abaixo:
 ```bash
  git clone https://github.com/biellil/CorteFacil.git
 ```
+2.entre na pasta
 ```bash
   cd CorteFacil
 
 ```
 
-2. Instale as dependências
+3. Instale as dependências
 
 ```bash
   npm ci
 ```
 
-3. Inicie a aplicação
+4. Inicie a aplicação
 
 ```bash
  npm run dev
