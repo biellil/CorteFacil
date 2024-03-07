@@ -11,7 +11,7 @@ export const MainHero = styled.main`
     cursor: pointer;
   }
   @media (max-width: 425px) {
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
 `
 
@@ -73,7 +73,7 @@ export const Sectionform = styled.section`
   }
   @media (max-width: 425px) {
     height: 100vh;
-    width: 64vh;
+    width: 60vh;
 
     > div {
       align-items: center;
