@@ -38,8 +38,8 @@ export const SectionHero = styled.section`
     }
   }
   @media (max-width: 425px) {
-    margin: 3rem;
-    height: 80vh;
+    margin: 2.5rem;
+    height: 19vh;
     width: 18rem;
     img {
       padding: 0rem;
@@ -125,6 +125,9 @@ export const Form = styled.form`
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.644);
     }
   }
+  @media (max-width: 425px) {
+    gap: 0.5rem;
+  }
 `
 
 export const DivLabelInput = styled.div`
@@ -160,9 +163,10 @@ export const DivLabelInput = styled.div`
     }
   }
   @media (max-width: 768px) {
+    gap: 0.2rem;
     input {
-      width: 19rem;
-      height: 2.8rem;
+      width: 20rem;
+      height: 2.5rem;
     }
   }
 `
@@ -198,5 +202,8 @@ export const Logodiv = styled.div`
     &:hover {
       text-shadow: 0 4px 5px;
     }
+  }
+  @media (max-width: 425px) {
+    gap: 1rem;
   }
 `
