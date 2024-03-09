@@ -16,7 +16,7 @@ import {
 } from './styles'
 
 export function SignupPage() {
-  const theme = useContext(ThemeContext)
+  const theme = useContext(ThemeContext) || { mode: 'light' }
   return (
     <AuthAnimationWrapper>
       <MainHero>

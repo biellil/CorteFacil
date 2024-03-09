@@ -76,7 +76,6 @@ export const Sectionform = styled.section`
       h1 {
         margin-top: 2.5rem;
         font-size: 3rem;
-        
       }
       p {
         font-size: 1.4rem;

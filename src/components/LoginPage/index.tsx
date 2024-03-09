@@ -15,7 +15,7 @@ import {
   Sectionform,
 } from './styles'
 export function LoginPage() {
-  const theme = useContext(ThemeContext)
+  const theme = useContext(ThemeContext) || { mode: 'light' }
   return (
     <AuthAnimationWrapper>
       <MainHero>
