@@ -160,7 +160,6 @@ export const DivLabelInput = styled.div`
     }
   }
   @media (max-width: 768px) {
-    
     input {
       width: 19rem;
       height: 2.8rem;
