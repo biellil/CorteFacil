@@ -1,7 +1,10 @@
+import { useContext } from 'react'
 import { Link } from 'react-router-dom'
+import { ThemeContext } from 'styled-components'
 import Facebook from '../../assets/apple-logo.png'
 import Google from '../../assets/google-logo.png'
-import logo from '../../assets/logoBarbershp.png'
+import logoLight from '../../assets/logoBarbershp.png'
+import logoDark from '../../assets/logoBarbershpDark.png'
 import { AuthAnimationWrapper } from '../AuthAnimationWrapper'
 import {
   DivLabelInput,
@@ -13,6 +16,7 @@ import {
 } from './styles'
 
 export function SignupPage() {
+  const theme = useContext(ThemeContext)
   return (
     <AuthAnimationWrapper>
       <MainHero>
@@ -76,7 +80,7 @@ export function SignupPage() {
           </Form>
         </Sectionform>
         <SectionHero>
-          <img src={logo} alt="Hero" />
+          <img src={theme.mode === 'dark' ? logoDark : logoLight} alt="Hero" />
         </SectionHero>
       </MainHero>
     </AuthAnimationWrapper>

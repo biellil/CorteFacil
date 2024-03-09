@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const MainHero = styled.main`
   display: flex;
   height: 100vh;
-  background-color: #ffffff;
+  background-color: var(--background);
   justify-content: space-between;
   align-items: center;
 
@@ -25,8 +25,8 @@ export const SectionHero = styled.section`
   img {
     padding: 0.5rem;
 
-    width: 68rem;
-    height: 48rem;
+    width: 50rem;
+    height: 50rem;
   }
 
   @media (max-width: 768px) {
@@ -38,7 +38,6 @@ export const SectionHero = styled.section`
     }
   }
   @media (max-width: 425px) {
-   
     img {
       display: none;
     }
@@ -68,7 +67,6 @@ export const Sectionform = styled.section`
     width: 70vh;
   }
   @media (max-width: 425px) {
-   
     height: 100vh;
     width: 100vh;
 
@@ -78,6 +76,7 @@ export const Sectionform = styled.section`
       h1 {
         margin-top: 2.5rem;
         font-size: 3rem;
+        
       }
       p {
         font-size: 1.4rem;
@@ -138,6 +137,7 @@ export const DivLabelInput = styled.div`
     font-size: 1.3rem;
     font-weight: 400;
     font-style: normal;
+    color: var(--text);
   }
   input {
     border-radius: 16px;
@@ -172,7 +172,7 @@ export const Logodiv = styled.div`
   padding: 0 3rem;
   display: flex;
   flex-direction: column;
-
+  color: var(--text);
   align-items: center;
   gap: 2rem;
 

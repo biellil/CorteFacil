@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const MainHero = styled.main`
   display: flex;
   height: 100vh;
-  background-color: #ffffff;
+  background-color: var(--background);
   justify-content: space-between;
   align-items: center;
 
@@ -25,8 +25,8 @@ export const SectionHero = styled.section`
   img {
     padding: 0.5rem;
 
-    width: 68rem;
-    height: 48rem;
+    width: 50rem;
+    height: 50rem;
   }
 
   @media (max-width: 768px) {
@@ -38,12 +38,13 @@ export const SectionHero = styled.section`
     }
   }
   @media (max-width: 425px) {
-    margin: 2.5rem;
+    margin: 2rem;
     height: 19vh;
     width: 18rem;
     img {
+      padding: 1rem;
       padding: 0rem;
-      width: 30rem;
+      width: auto;
       height: 20rem;
     }
   }
@@ -66,11 +67,13 @@ export const Sectionform = styled.section`
       font-size: 2.5rem;
       font-weight: 500;
       font-style: normal;
+      color: var(--text);
     }
     p {
       font-size: 1rem;
       font-weight: 300;
       font-style: normal;
+      color: var(--text);
     }
   }
   @media (max-width: 768px) {
@@ -86,11 +89,13 @@ export const Sectionform = styled.section`
       h1 {
         margin-top: 2.5rem;
         font-size: 3rem;
+        color: var(--text);
       }
       p {
         font-size: 1.4rem;
         font-weight: 350;
         font-style: normal;
+        color: var(--text);
       }
     }
   }
@@ -111,7 +116,7 @@ export const Form = styled.form`
     align-items: center;
     justify-content: center;
     border-radius: 16px;
-
+    color: var(--text);
     box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.2);
     height: 2.5rem;
     width: 20rem;
@@ -140,6 +145,7 @@ export const DivLabelInput = styled.div`
     font-size: 1.3rem;
     font-weight: 400;
     font-style: normal;
+    color: var(--text);
   }
   input {
     border-radius: 16px;
@@ -156,7 +162,8 @@ export const DivLabelInput = styled.div`
   }
 
   a {
-    color: #000;
+    color: var(--primary);
+
     margin-left: 11.5rem;
     &:hover {
       text-shadow: 0 4px 5px;
@@ -175,7 +182,7 @@ export const Logodiv = styled.div`
   padding: 0 3rem;
   display: flex;
   flex-direction: column;
-
+  color: var(--text);
   align-items: center;
   gap: 2rem;
 
