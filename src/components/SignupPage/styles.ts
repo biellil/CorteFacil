@@ -38,13 +38,9 @@ export const SectionHero = styled.section`
     }
   }
   @media (max-width: 425px) {
-    margin: 3rem;
-    height: 80vh;
-    width: 18rem;
+   
     img {
-      padding: 0rem;
-      width: 30rem;
-      height: 20rem;
+      display: none;
     }
   }
 `
@@ -72,8 +68,9 @@ export const Sectionform = styled.section`
     width: 70vh;
   }
   @media (max-width: 425px) {
+   
     height: 100vh;
-    width: 60vh;
+    width: 100vh;
 
     > div {
       align-items: center;
@@ -126,6 +123,9 @@ export const Form = styled.form`
       text-shadow: 0 4px 5px;
     }
   }
+  @media (max-width: 425px) {
+    gap: 0.9rem;
+  }
 `
 
 export const DivLabelInput = styled.div`
@@ -163,7 +163,7 @@ export const DivLabelInput = styled.div`
   @media (max-width: 768px) {
     input {
       width: 19rem;
-      height: 2.8rem;
+      height: 3rem;
     }
   }
 `
@@ -193,5 +193,8 @@ export const Logodiv = styled.div`
       width: 42px;
       padding: 1px;
     }
+  }
+  @media (max-width: 425px) {
+    gap: 1rem;
   }
 `
