@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom'
-import Facebook from '../../../assets/apple-logo.png'
-import Google from '../../../assets/google-logo.png'
-import logo from '../../../assets/heroBarbershp.png'
-import { AuthAnimationWrapper } from '../../AuthAnimationWrapper'
+import Facebook from '../../assets/apple-logo.png'
+import Google from '../../assets/google-logo.png'
+import logo from '../../assets/logoBarbershp.png'
+import { AuthAnimationWrapper } from '../AuthAnimationWrapper'
 import {
   DivLabelInput,
   Form,

@@ -25,16 +25,16 @@ export const SectionHero = styled.section`
   img {
     padding: 0.5rem;
 
-    width: 39rem;
-    height: 24rem;
+    width: 68rem;
+    height: 48rem;
   }
 
   @media (max-width: 768px) {
-    width: 18rem;
+    width: 25rem;
     img {
       padding: 1rem;
-      width: 30rem;
-      height: 20rem;
+      width: 40rem;
+      height: 30rem;
     }
   }
   @media (max-width: 425px) {
@@ -43,8 +43,8 @@ export const SectionHero = styled.section`
     width: 18rem;
     img {
       padding: 0rem;
-      width: 20rem;
-      height: 15rem;
+      width: 30rem;
+      height: 20rem;
     }
   }
 `
@@ -74,7 +74,7 @@ export const Sectionform = styled.section`
     }
   }
   @media (max-width: 768px) {
-    width: 70vh;
+    width: 68vh;
   }
   @media (max-width: 425px) {
     height: 100vh;
@@ -129,6 +129,7 @@ export const Form = styled.form`
 
 export const DivLabelInput = styled.div`
   display: flex;
+
   flex-direction: column;
   justify-content: space-evenly;
   gap: 0.4rem;
@@ -156,6 +157,13 @@ export const DivLabelInput = styled.div`
     margin-left: 11.5rem;
     &:hover {
       text-shadow: 0 4px 5px;
+    }
+  }
+  @media (max-width: 768px) {
+    
+    input {
+      width: 19rem;
+      height: 2.8rem;
     }
   }
 `
