@@ -204,7 +204,8 @@ export const Logodiv = styled.div`
       padding: 1px;
     }
   }
-  a {
+  > button {
+    font-size: 1.3rem;
     color: var(--primary);
     &:hover {
       text-shadow: 0 4px 5px;

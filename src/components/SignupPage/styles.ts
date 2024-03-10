@@ -193,6 +193,13 @@ export const Logodiv = styled.div`
       padding: 1px;
     }
   }
+  > button {
+    font-size: 1.3rem;
+    color: var(--primary);
+    &:hover {
+      text-shadow: 0 4px 5px;
+    }
+  }
   @media (max-width: 425px) {
     gap: 1rem;
   }
