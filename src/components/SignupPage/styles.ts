@@ -196,6 +196,7 @@ export const Logodiv = styled.div`
   > button {
     font-size: 1.3rem;
     color: var(--primary);
+    background-color: var(--secondary);
     &:hover {
       text-shadow: 0 4px 5px;
     }
