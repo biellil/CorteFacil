@@ -1,5 +1,4 @@
 import { useContext } from 'react'
-import { Link } from 'react-router-dom'
 import { ThemeContext } from 'styled-components'
 import Facebook from '../../assets/apple-logo.png'
 import Google from '../../assets/google-logo.png'
@@ -15,7 +14,13 @@ import {
   Sectionform,
 } from './styles'
 
-export function SignupPage() {
+export const SignupPage = ({
+  switchToLogin,
+}: {
+  switchToLogin: (
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+  ) => void
+}) => {
   const theme = useContext(ThemeContext) || { mode: 'light' }
   return (
     <AuthAnimationWrapper>
@@ -75,8 +80,8 @@ export function SignupPage() {
                   <img src={Google} alt="" />
                 </button>
               </div>
+              <button onClick={switchToLogin}>Já estou cadastrado</button>
             </Logodiv>
-            <Link to="/">Já estou cadastrado</Link>
           </Form>
         </Sectionform>
         <SectionHero>

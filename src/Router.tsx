@@ -1,12 +1,10 @@
 import { Route, Routes } from 'react-router-dom'
-import { LoginPage } from './components/LoginPage'
-import { SignupPage } from './components/SignupPage'
+import { Auth } from './pages/auth'
 
 export function Routers() {
   return (
     <Routes>
-      <Route path="/" index element={<LoginPage />} />
-      <Route path="/signup" element={<SignupPage />} />
+      <Route path="/" index element={<Auth />} />
     </Routes>
   )
 }

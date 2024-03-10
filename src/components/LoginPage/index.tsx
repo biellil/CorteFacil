@@ -14,7 +14,13 @@ import {
   SectionHero,
   Sectionform,
 } from './styles'
-export function LoginPage() {
+export const LoginPage = ({
+  switchToSignup,
+}: {
+  switchToSignup: (
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+  ) => void
+}) => {
   const theme = useContext(ThemeContext) || { mode: 'light' }
   return (
     <AuthAnimationWrapper>
@@ -66,7 +72,9 @@ export function LoginPage() {
                   <img src={Google} alt="" />
                 </button>
               </div>
-              <Link to="/signup">Não possui conta? Cadastre-se </Link>
+              <button onClick={switchToSignup}>
+                Não possui conta? Cadastre-se
+              </button>
             </Logodiv>
           </Form>
         </Sectionform>
