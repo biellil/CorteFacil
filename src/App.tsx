@@ -5,9 +5,20 @@ import { Routers } from './Router'
 import { GlobalStyle } from './styles/global'
 import { darkTheme, lightTheme } from './styles/themes'
 
-const ThemeContext = createContext()
+interface ThemeContextType {
+  theme: string
+  toggleTheme: () => void
+}
 
-export const useTheme = () => useContext(ThemeContext)
+const ThemeContext = createContext<ThemeContextType | undefined>(undefined)
+
+export const useTheme = () => {
+  const context = useContext(ThemeContext)
+  if (context === undefined) {
+    throw new Error('useTheme must be used within a CustomThemeProvider')
+  }
+  return context
+}
 
 export const CustomThemeProvider = ({ children }: { children: ReactNode }) => {
   const [theme, setTheme] = useState('light')
