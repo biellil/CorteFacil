@@ -6,7 +6,7 @@ export const GlobalStyle = createGlobalStyle`
   --secondary: ${(props) => props.theme.secondary};
   --background: ${(props) => props.theme.background};
   --text: ${(props) => props.theme.text};
- 
+  --button: ${(props) => props.theme.button};
 }
 
   * {
@@ -23,7 +23,11 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 100%;
   }
 
-  
+  html, body {
+  height: 100%;
+  margin: 0;
+}
+
   @media (max-width: 768px) {
     html {
       font-size: 80%;
