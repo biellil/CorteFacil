@@ -1,11 +1,11 @@
 import { useContext } from 'react'
-import { Link } from 'react-router-dom'
 import { ThemeContext } from 'styled-components'
 import Facebook from '../../assets/apple-logo.png'
 import Google from '../../assets/google-logo.png'
 import logoLight from '../../assets/logoBarbershp.png'
 import logoDark from '../../assets/logoBarbershpDark.png'
 import { AuthAnimationWrapper } from '../AuthAnimationWrapper'
+import { Themeselection } from '../Themeselection'
 import {
   DivLabelInput,
   Form,
@@ -26,14 +26,13 @@ export const LoginPage = ({
     <AuthAnimationWrapper>
       <MainHero>
         <SectionHero>
-          <Link to="/">
-            <img
-              src={theme.mode === 'dark' ? logoDark : logoLight}
-              alt="Hero"
-            />
-          </Link>
+          <img
+            src={theme.mode === 'dark' ? logoDark : logoLight}
+            alt="logo barbershop"
+          />
         </SectionHero>
         <Sectionform>
+          <Themeselection />
           <div>
             <h1>Login</h1>
             <p>Entre com email e senha.</p>

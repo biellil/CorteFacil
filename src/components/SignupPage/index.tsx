@@ -13,6 +13,7 @@ import {
   SectionHero,
   Sectionform,
 } from './styles'
+import { Themeselection } from '../Themeselection'
 
 export const SignupPage = ({
   switchToLogin,
@@ -26,6 +27,7 @@ export const SignupPage = ({
     <AuthAnimationWrapper>
       <MainHero>
         <Sectionform>
+        <Themeselection />
           <div>
             <h1>Crie uma conta</h1>
           </div>
