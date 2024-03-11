@@ -51,7 +51,8 @@ export const SectionHero = styled.section`
 `
 export const Sectionform = styled.section`
   height: 100vh;
-  width: 80vh;
+  width: 45vw;
+  gap: 1rem;
   background-color: var(--secondary);
   display: flex;
   flex-direction: column;
@@ -80,8 +81,8 @@ export const Sectionform = styled.section`
     width: 68vh;
   }
   @media (max-width: 425px) {
-    height: 100vh;
-    width: 64vh;
+    height: 80vh;
+    width: 100vw;
 
     > div {
       align-items: center;
@@ -102,10 +103,11 @@ export const Sectionform = styled.section`
 `
 export const Form = styled.form`
   padding: 2rem 0;
-  margin-left: -1rem;
+
   gap: 1rem;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: start;
   align-items: start;
   > div {
@@ -131,7 +133,8 @@ export const Form = styled.form`
     }
   }
   @media (max-width: 425px) {
-    gap: 0.5rem;
+    gap: 0.8rem;
+    margin-left: 2rem;
   }
 `
 

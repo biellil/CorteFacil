@@ -2,7 +2,10 @@ import styled from 'styled-components'
 
 export const MainHero = styled.main`
   display: flex;
+  max-width: 100%;
+  max-height: 100%;
   height: 100vh;
+
   background-color: var(--background);
   justify-content: space-between;
   align-items: center;
@@ -30,7 +33,6 @@ export const SectionHero = styled.section`
   }
 
   @media (max-width: 768px) {
-    width: 25rem;
     img {
       padding: 1rem;
       width: 40rem;
@@ -38,14 +40,18 @@ export const SectionHero = styled.section`
     }
   }
   @media (max-width: 425px) {
+    display: none;
+   
     img {
-      display: none;
+      padding: 0rem;
+      width: 15rem;
+      height: 15rem;
     }
   }
 `
 export const Sectionform = styled.section`
   height: 100vh;
-  width: 80vh;
+  width: 45vw;
   background-color: var(--secondary);
   display: flex;
   flex-direction: column;
@@ -68,7 +74,7 @@ export const Sectionform = styled.section`
   }
   @media (max-width: 425px) {
     height: 100vh;
-    width: 100vh;
+    width: 100vw;
 
     > div {
       align-items: center;
@@ -95,7 +101,11 @@ export const Form = styled.form`
   align-items: center;
   > div {
   }
-
+  > button,
+  input {
+    width: 90%;
+    max-width: 20rem;
+  }
   > button {
     display: flex;
     align-items: center;
@@ -139,8 +149,10 @@ export const DivLabelInput = styled.div`
     color: var(--text);
   }
   input {
+    padding: 1.2rem;
+    font-size: 1.1rem;
     border-radius: 16px;
-    padding: 1rem;
+
     height: 2.8rem;
     width: 20rem;
     box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.2);
@@ -149,7 +161,6 @@ export const DivLabelInput = styled.div`
       border: 2px solid var(--primary);
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.644);
     }
-    font-size: 1.2rem;
   }
 
   a {
