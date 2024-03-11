@@ -1,16 +1,15 @@
-import { createContext, useContext, useState } from 'react'
+import { ReactNode, createContext, useContext, useState } from 'react'
 import { BrowserRouter } from 'react-router-dom'
 import { ThemeProvider } from 'styled-components'
 import { Routers } from './Router'
 import { GlobalStyle } from './styles/global'
 import { darkTheme, lightTheme } from './styles/themes'
 
-
 const ThemeContext = createContext()
 
 export const useTheme = () => useContext(ThemeContext)
 
-export const CustomThemeProvider = ({ children }) => {
+export const CustomThemeProvider = ({ children }: { children: ReactNode }) => {
   const [theme, setTheme] = useState('light')
 
   const toggleTheme = () => {
