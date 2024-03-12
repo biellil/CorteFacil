@@ -1,4 +1,10 @@
-import { ReactNode, createContext, useContext, useState } from 'react'
+import {
+  ReactNode,
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+} from 'react'
 import { BrowserRouter } from 'react-router-dom'
 import { ThemeProvider } from 'styled-components'
 import { Routers } from './Router'
@@ -14,17 +20,39 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined)
 
 export const useTheme = () => {
   const context = useContext(ThemeContext)
-  if (context === undefined) {
+
+  if (!context) {
     throw new Error('useTheme must be used within a CustomThemeProvider')
   }
+
   return context
 }
 
 export const CustomThemeProvider = ({ children }: { children: ReactNode }) => {
-  const [theme, setTheme] = useState('light')
+  const storedTheme = sessionStorage.getItem('theme')
+  const systemPrefersDark =
+    window.matchMedia &&
+    window.matchMedia('(prefers-color-scheme: dark)').matches
+  const defaultTheme = storedTheme || (systemPrefersDark ? 'dark' : 'light')
+  const [theme, setTheme] = useState(defaultTheme)
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
+    const handleChange = (e: MediaQueryListEvent) => {
+      if (!sessionStorage.getItem('theme')) {
+        setTheme(e.matches ? 'dark' : 'light')
+      }
+    }
+
+    mediaQuery.addEventListener('change', handleChange)
+
+    return () => mediaQuery.removeEventListener('change', handleChange)
+  }, [])
 
   const toggleTheme = () => {
-    setTheme(theme === 'light' ? 'dark' : 'light')
+    const newTheme = theme === 'light' ? 'dark' : 'light'
+    setTheme(newTheme)
+    sessionStorage.setItem('theme', newTheme)
   }
 
   return (
