@@ -1,8 +1,8 @@
 export const lightTheme = {
   mode: 'light',
-  secondary: '#ECEFF1',
+  secondary: '#d6dadd',
   primary: '#d69533',
-  background: '#FFF',
+  background: '#ebe8e8',
   text: '#363537',
   button: '#FFFFFF',
 }
