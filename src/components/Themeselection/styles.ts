@@ -4,7 +4,7 @@ export const Sectiontema = styled.nav`
   position: fixed;
 
   top: 75px;
-  right: 2px;
+  right: 1px;
 
   cursor: pointer;
   background-color: var(--button);
@@ -13,7 +13,7 @@ export const Sectiontema = styled.nav`
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: 5s;
+
   button {
     margin: 0.5rem;
     display: flex;
@@ -27,18 +27,26 @@ export const Sectiontema = styled.nav`
       height: 3rem;
     }
   }
+  @media (max-width: 425px) {
+    top: 250px;
+    button {
+      svg {
+        width: 2.5rem;
+        height: 2.5rem;
+      }
+    }
+  }
 `
 
 export const SectiontemaLeft = styled.nav`
   position: fixed;
 
   top: 75px;
-  left: 2px;
+  left: 1px;
 
   cursor: pointer;
   background-color: var(--button);
   border-radius: 0px 25px 25px 0px;
-  transition: 5s;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -51,8 +59,18 @@ export const SectiontemaLeft = styled.nav`
     background: none;
     transition: 5s;
     svg {
-      width: 3rem;
       height: 3rem;
+      height: 3rem;
+    }
+  }
+  @media (max-width: 425px) {
+    top: 35px;
+
+    button {
+      svg {
+        width: 2.5rem;
+        height: 2.5rem;
+      }
     }
   }
 `
