@@ -5,6 +5,7 @@ import Google from '../../assets/google-logo.png'
 import logoLight from '../../assets/logoBarbershp.png'
 import logoDark from '../../assets/logoBarbershpDark.png'
 import { AuthAnimationWrapper } from '../AuthAnimationWrapper'
+import { ThemeselectionLeft } from '../Themeselection'
 import {
   DivLabelInput,
   Form,
@@ -13,7 +14,6 @@ import {
   SectionHero,
   Sectionform,
 } from './styles'
-import { Themeselection } from '../Themeselection'
 
 export const SignupPage = ({
   switchToLogin,
@@ -27,7 +27,7 @@ export const SignupPage = ({
     <AuthAnimationWrapper>
       <MainHero>
         <Sectionform>
-        <Themeselection />
+          <ThemeselectionLeft />
           <div>
             <h1>Crie uma conta</h1>
           </div>
