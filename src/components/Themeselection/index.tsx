@@ -9,7 +9,7 @@ import { useTheme } from '../../App'
 import { Sectiontema, SectiontemaLeft } from './styles'
 
 export const Themeselection = () => {
-  const { toggleTheme, theme } = useTheme()
+  const { toggleTheme, theme } = useTheme()!
   const [isLeftArrow, setIsLeftArrow] = useState(true)
 
   const toggleIcon = () => setIsLeftArrow(!isLeftArrow)
@@ -33,7 +33,7 @@ export const Themeselection = () => {
 }
 
 export const ThemeselectionLeft = () => {
-  const { toggleTheme, theme } = useTheme()
+  const { toggleTheme, theme } = useTheme()!
   const [isLeftArrowLeft, setIsLeftArrowLeft] = useState(true)
 
   const toggleIconLeft = () => setIsLeftArrowLeft(!isLeftArrowLeft)
