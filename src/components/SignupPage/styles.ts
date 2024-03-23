@@ -41,7 +41,7 @@ export const SectionHero = styled.section`
   }
   @media (max-width: 425px) {
     display: none;
-   
+
     img {
       padding: 0rem;
       width: 15rem;
@@ -59,12 +59,14 @@ export const Sectionform = styled.section`
   justify-content: center;
 
   > div {
+    gap: 1rem;
     display: flex;
     flex-direction: column;
+    align-items: center;
 
     h1 {
       color: var(--primary);
-      font-size: 2.5rem;
+      font-size: 4rem;
       font-weight: 500;
       font-style: normal;
     }
@@ -141,12 +143,21 @@ export const DivLabelInput = styled.div`
 
   flex-direction: column;
   justify-content: space-evenly;
-  gap: 0.4rem;
+
   label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     font-size: 1.3rem;
     font-weight: 400;
     font-style: normal;
     color: var(--text);
+    gap: 0.5rem;
+    p {
+      font-size: 1rem;
+      color: red;
+      margin-bottom: 10px;
+    }
   }
   input {
     padding: 1.2rem;

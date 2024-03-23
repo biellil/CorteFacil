@@ -63,15 +63,16 @@ export const Sectionform = styled.section`
     gap: 1rem;
     display: flex;
     flex-direction: column;
+    align-items: center;
 
     h1 {
-      font-size: 2.5rem;
+      font-size: 4rem;
       font-weight: 500;
       font-style: normal;
       color: var(--text);
     }
     p {
-      font-size: 1rem;
+      font-size: 1.5rem;
       font-weight: 300;
       font-style: normal;
       color: var(--text);
@@ -145,10 +146,17 @@ export const DivLabelInput = styled.div`
   justify-content: space-evenly;
   gap: 0.4rem;
   label {
+    display: flex;
+    align-items: center;
     font-size: 1.3rem;
     font-weight: 400;
     font-style: normal;
     color: var(--text);
+    gap: 1.5rem;
+    p {
+      font-size: 1rem;
+      color: red;
+    }
   }
   input {
     border-radius: 16px;
