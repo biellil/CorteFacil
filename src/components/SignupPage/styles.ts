@@ -146,7 +146,6 @@ export const DivLabelInput = styled.div`
 
   label {
     display: flex;
-    flex-direction: column;
     align-items: center;
     font-size: 1.3rem;
     font-weight: 400;
@@ -156,7 +155,6 @@ export const DivLabelInput = styled.div`
     p {
       font-size: 1rem;
       color: red;
-      margin-bottom: 10px;
     }
   }
   input {
