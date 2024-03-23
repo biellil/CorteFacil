@@ -1,5 +1,8 @@
+import { zodResolver } from '@hookform/resolvers/zod'
 import { useContext } from 'react'
+import { useForm } from 'react-hook-form'
 import { ThemeContext } from 'styled-components'
+import { z } from 'zod'
 import Facebook from '../../assets/apple-logo.png'
 import Google from '../../assets/google-logo.png'
 import logoLight from '../../assets/logoBarbershp.png'
@@ -14,14 +17,51 @@ import {
   SectionHero,
   Sectionform,
 } from './styles'
-export const LoginPage = ({
-  switchToSignup,
-}: {
-  switchToSignup: (
-    event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
-  ) => void
-}) => {
+
+interface LoginPageProps {
+  switchToSignup: () => void
+}
+
+interface FormData {
+  emailOrPhone: string
+  password: string
+}
+
+const isEmailOrPhone = (value: string) => {
+  const emailRegex = /\S+@\S+\.\S+/
+  const phoneRegex = /^[0-9]{10}$/
+  return emailRegex.test(value) || phoneRegex.test(value)
+}
+
+const loginSchema = z.object({
+  emailOrPhone: z
+    .string()
+    .nonempty({ message: 'Email ou telefone é obrigatório' })
+    .refine((val) => isEmailOrPhone(val), {
+      message: 'Email ou telefone inválido',
+    }),
+  password: z
+    .string()
+    .min(6, { message: 'Senha deve ter pelo menos 6 caracteres' })
+    .max(50, { message: 'Senha deve ter no máximo 50 caracteres' }),
+})
+
+export const LoginPage = ({ switchToSignup }: LoginPageProps) => {
   const theme = useContext(ThemeContext) || { mode: 'light' }
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormData>({
+    resolver: zodResolver(loginSchema),
+  })
+
+  const onSubmit = (data: FormData) => {
+    console.log(data)
+    // Implemente a lógica de login aqui
+  }
+
   return (
     <AuthAnimationWrapper>
       <MainHero>
@@ -35,27 +75,33 @@ export const LoginPage = ({
           <Themeselection />
           <div>
             <h1>Login</h1>
-            <p>Entre com email e senha.</p>
+            <p>Entre com Email ou Telefone e senha.</p>
           </div>
-          <Form>
+          <Form onSubmit={handleSubmit(onSubmit)}>
             <DivLabelInput>
-              <label htmlFor="email">Email</label>
+              <label htmlFor="emailOrPhone">
+                Email ou Telefone
+                {errors.emailOrPhone && <p>{errors.emailOrPhone.message}</p>}
+              </label>
               <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="exemplo@gmail.com"
+                type="text"
+                id="emailOrPhone"
+                {...register('emailOrPhone')}
+                placeholder="Email ou Telefone"
               />
             </DivLabelInput>
 
             <DivLabelInput>
-              <label htmlFor="password">Senha</label>
+              <label htmlFor="password">
+                Senha {errors.password && <p>{errors.password.message}</p>}
+              </label>
               <input
                 type="password"
                 id="password"
-                name="password"
+                {...register('password')}
                 placeholder="**********"
               />
+
               <a href="#">Esqueceu a senha?</a>
             </DivLabelInput>
 

@@ -1,11 +1,14 @@
+import { zodResolver } from '@hookform/resolvers/zod'
 import { useContext } from 'react'
+import { useForm } from 'react-hook-form'
 import { ThemeContext } from 'styled-components'
+import { z } from 'zod'
 import Facebook from '../../assets/apple-logo.png'
 import Google from '../../assets/google-logo.png'
 import logoLight from '../../assets/logoBarbershp.png'
 import logoDark from '../../assets/logoBarbershpDark.png'
 import { AuthAnimationWrapper } from '../AuthAnimationWrapper'
-import { ThemeselectionLeft } from '../Themeselection'
+import { Themeselection } from '../Themeselection'
 import {
   DivLabelInput,
   Form,
@@ -15,6 +18,36 @@ import {
   Sectionform,
 } from './styles'
 
+interface FormData {
+  emailOrPhone: string
+  password: string
+  confirmPassword: string
+}
+
+const isEmailOrPhone = (value: string) => {
+  const emailRegex = /\S+@\S+\.\S+/
+  const phoneRegex = /^[0-9]{10,11}$/
+  return emailRegex.test(value) || phoneRegex.test(value)
+}
+
+const SignupSchema = z
+  .object({
+    emailOrPhone: z
+      .string()
+      .nonempty({ message: 'Email ou telefone é obrigatório' })
+      .refine((val) => isEmailOrPhone(val), {
+        message: 'Email ou telefone inválido',
+      }),
+    password: z
+      .string()
+      .min(6, { message: 'Senha deve ter pelo menos 6 caracteres' }),
+    confirmPassword: z.string(),
+  })
+  .refine((data) => data.password === data.confirmPassword, {
+    message: 'As senhas não coincidem',
+    path: ['confirmPassword'],
+  })
+
 export const SignupPage = ({
   switchToLogin,
 }: {
@@ -23,54 +56,70 @@ export const SignupPage = ({
   ) => void
 }) => {
   const theme = useContext(ThemeContext) || { mode: 'light' }
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormData>({
+    resolver: zodResolver(SignupSchema),
+  })
+
+  const onSubmit = (data: FormData) => {
+    console.log(data)
+    // Implemente a lógica de cadastro aqui
+  }
+
   return (
     <AuthAnimationWrapper>
       <MainHero>
         <Sectionform>
-          <ThemeselectionLeft />
+          <Themeselection />
           <div>
             <h1>Crie uma conta</h1>
           </div>
-          <Form>
+          <Form onSubmit={handleSubmit(onSubmit)}>
             <DivLabelInput>
-              <label htmlFor="name">Nome completo</label>
+              <label htmlFor="emailOrPhone">
+                Email ou Telefone
+                {errors.emailOrPhone && <p>{errors.emailOrPhone.message}</p>}
+              </label>
               <input
                 type="text"
-                id="name"
-                name="name"
-                placeholder="José da Silva"
+                id="emailOrPhone"
+                {...register('emailOrPhone')}
+                placeholder="Email ou Telefone"
               />
             </DivLabelInput>
+
             <DivLabelInput>
-              <label htmlFor="email">Email</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="exemplo@gmail.com"
-              />
-            </DivLabelInput>
-            <DivLabelInput>
-              <label htmlFor="password">Senha</label>
+              <label htmlFor="password">
+                Senha {errors.password && <p>{errors.password.message}</p>}
+              </label>
               <input
                 type="password"
                 id="password"
-                name="password"
+                {...register('password')}
                 placeholder="**********"
               />
             </DivLabelInput>
 
             <DivLabelInput>
-              <label htmlFor="confirmPassword">Confirmar senha</label>
+              <label htmlFor="confirmPassword">
+                Confirmar senha
+                {errors.confirmPassword && (
+                  <p>{errors.confirmPassword.message}</p>
+                )}
+              </label>
               <input
                 type="password"
                 id="confirmPassword"
-                name="password"
+                {...register('confirmPassword')}
                 placeholder="**********"
               />
             </DivLabelInput>
 
-            <button type="submit">Entrar</button>
+            <button type="submit">Criar conta</button>
 
             <Logodiv>
               <p>OU</p>
