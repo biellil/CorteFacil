@@ -1,6 +1,7 @@
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useContext } from 'react'
 import { useForm } from 'react-hook-form'
+import { useNavigate } from 'react-router-dom'
 import { ThemeContext } from 'styled-components'
 import { z } from 'zod'
 import Facebook from '../../assets/apple-logo.png'
@@ -64,10 +65,10 @@ export const SignupPage = ({
   } = useForm<FormData>({
     resolver: zodResolver(SignupSchema),
   })
-
+  const navigate = useNavigate()
   const onSubmit = (data: FormData) => {
+    navigate('/')
     console.log(data)
-    // Implemente a lógica de cadastro aqui
   }
 
   return (
