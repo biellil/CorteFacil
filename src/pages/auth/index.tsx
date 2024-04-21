@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { LoginPage } from '../../components/LoginPage'
 import { SignupPage } from '../../components/SignupPage'
 
-const Auth = () => {
+export default function Auth() {
   const [showLogin, setShowLogin] = useState(true)
 
   const switchToSignup = () => {
@@ -23,4 +23,3 @@ const Auth = () => {
     </>
   )
 }
-export default Auth
