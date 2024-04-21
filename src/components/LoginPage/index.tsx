@@ -60,7 +60,7 @@ export const LoginPage = ({ switchToSignup }: LoginPageProps) => {
 
   const navigate = useNavigate()
   const onSubmit = (data: FormData) => {
-    navigate('/feat')
+    navigate('/Feat')
     console.log(data)
   }
 
