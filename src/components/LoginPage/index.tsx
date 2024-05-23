@@ -1,3 +1,4 @@
+// LoginPage/index.js ou LoginPage/index.tsx
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useContext } from 'react'
 import { useForm } from 'react-hook-form'
@@ -47,7 +48,7 @@ const loginSchema = z.object({
     .max(50, { message: 'Senha deve ter no máximo 50 caracteres' }),
 })
 
-export const LoginPage = ({ switchToSignup }: LoginPageProps) => {
+const LoginPage = ({ switchToSignup }: LoginPageProps) => {
   const theme = useContext(ThemeContext) || { mode: 'light' }
 
   const {
@@ -129,3 +130,5 @@ export const LoginPage = ({ switchToSignup }: LoginPageProps) => {
     </AuthAnimationWrapper>
   )
 }
+
+export default LoginPage
