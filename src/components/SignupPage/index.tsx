@@ -49,7 +49,7 @@ const SignupSchema = z
     path: ['confirmPassword'],
   })
 
-export const SignupPage = ({
+ const SignupPage = ({
   switchToLogin,
 }: {
   switchToLogin: (
@@ -143,3 +143,4 @@ export const SignupPage = ({
     </AuthAnimationWrapper>
   )
 }
+export default SignupPage
