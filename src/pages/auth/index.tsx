@@ -1,8 +1,10 @@
-import { useState } from 'react'
-import { LoginPage } from '../../components/LoginPage'
-import { SignupPage } from '../../components/SignupPage'
+import { useState, Suspense, lazy } from 'react'
+import { Loading } from '../../components/Loading'
 
-export default function Auth() {
+const LoginPage = lazy(() => import('../../components/LoginPage'))
+const SignupPage = lazy(() => import('../../components/SignupPage'))
+
+export function Auth() {
   const [showLogin, setShowLogin] = useState(true)
 
   const switchToSignup = () => {
@@ -14,12 +16,12 @@ export default function Auth() {
   }
 
   return (
-    <>
+    <Suspense fallback={<Loading />}>
       {showLogin ? (
         <LoginPage switchToSignup={switchToSignup} />
       ) : (
         <SignupPage switchToLogin={switchToLogin} />
       )}
-    </>
+    </Suspense>
   )
 }
