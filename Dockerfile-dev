@@ -1,17 +1,18 @@
+FROM node:20.13-alpine3.20
 
-FROM node:18
 
+RUN npm install -g pnpm
 
 WORKDIR /app
 
-
 COPY . .
 
-RUN npm install
+
+RUN pnpm install
+
+
 
 EXPOSE 3000
 
 
-ENV VITE_PORT 3000
-
-CMD ["npm", "run", "dev"]
+CMD [ "pnpm", "run", "dev" ]

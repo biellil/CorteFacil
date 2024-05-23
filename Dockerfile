@@ -1,16 +1,17 @@
-FROM node:18-alpine
+FROM node:20.13-alpine3.20
+
+
+RUN npm install -g pnpm
 
 WORKDIR /app
 
 COPY . .
 
 
-RUN npm install
+RUN pnpm install
 
-
-
-RUN npm run build
+RUN pnpm run build
 
 EXPOSE 3000
 
-CMD [ "npm", "run", "preview" ]
+CMD [ "pnpm", "run", "preview" ]
