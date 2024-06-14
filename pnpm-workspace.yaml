@@ -1,3 +1,6 @@
 packages:
-- 'API'
-- 'frontend'
+  - .env
+    - api
+      - .env
+    - web
+      - .env
